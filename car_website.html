@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Mods - Your One-Stop Shop for Modifications</title>
+    <!-- Add Bootstrap CSS and JavaScript links here -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" integrity="sha384-..." crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<style>
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.custom-learn-button {
+    background: linear-gradient(to bottom, rgb(31, 173, 239), rgb(100, 30, 252));
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    box-shadow: 0 0 20px rgba(0, 19, 128, 0.5);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+#learnMore:hover {
+    transition: box-shadow 0.2s ease-in, transform 0.2s ease-in, background-color 0.2s ease-in;
+}
+
+#learnMore.custom-learn-button:hover {
+    transform: scale(1.05);
+    background: white;
+    box-shadow: 0 0 20px rgba(66, 128, 159, 0.8);
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.custom-search-button {
+    background: linear-gradient(to bottom,rgb(31, 173, 239), rgb(100, 30, 252));
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    border-radius: 20px;
+    padding: 10px 20px;
+    box-shadow: 0 0 20px rgba(0, 19, 128, 0.5);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.custom-search-button:hover {
+    transform: scale(1.05);
+    background: white;
+    box-shadow: 0 0 20px rgba(66, 128, 159, 0.8);
+}
+
+/* Add this CSS to your stylesheet */
+.navbar-nav .nav-item a.nav-link {
+    position: relative;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item a.nav-link:hover {
+    color: #007bff;
+}
+
+.navbar-nav .nav-item a.nav-link::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #007bff;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item a.nav-link:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Add this CSS to your stylesheet */
+.navbar-brand img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar-brand img:hover {
+    transform: scale(1.1);
+}
+::-webkit-scrollbar{
+    display: none;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.smooth-scroll {
+    transition: all 0.3s ease-in-out;
+}
+
+.parallelogram {
+    clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+}
+.slide-in {
+    transform: translateX(-100%);
+    transition: transform 1s;
+}
+
+.slide-in-opposite {
+    transform: translateX(100%);
+    transition: transform 1s;
+}
+/* Hide the scrollbar for all elements */
+
+#features {
+  background-image: url(bmweyes.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+#features::before {
+  content: "";
+  background: rgba(0, 0, 0, 0.6); /* Adjust the alpha value (0.6) for the desired opacity */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+#features i,
+#features h3,
+#features p {
+  color: white; /* Set the color of the text and icons to white */
+  position: relative;
+  z-index: 2;
+}
+#before-after {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.before-after-container {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.image-container {
+    flex: 1;
+}
+
+#before-image, #after-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+#after-image {
+    transform: translateY(100%);
+}
+
+#image-slider {
+    width: 20px;
+    height: 300px;
+    margin: 0 10px;
+    writing-mode: bt-lr; /* Vertical writing mode */
+    transform: rotate(180deg); /* Rotate slider vertically */
+}
+
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+            <img src="logo.png" alt="CarModz Logo" width="50" height="auto">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Performance
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Tuning</a>
+                        <a class="dropdown-item" href="#">Bodykits & Detailing</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Aftermarket Parts</a>
+                        <a class="dropdown-item" href="#">Accessories</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Bodykits</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Gallery</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <input style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; padding: 4px 4px; height: 27px;" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn custom-search-button" style="font-size: 12px; padding: 4px 8px;" type="submit">Search</button>
+            </form>
+            
+
+        </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+        <section id="landing" class="vh-100 text-white d-flex align-items-center" style="position: relative;">
+            <video autoplay loop muted playsinline id="video-background" style="object-fit: cover; width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+                <source src="bmwCOMP.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- Dark overlay -->
+            <div class="overlay"></div>
+            <div class="container text-center" style="position: relative; z-index: 1;">
+                <h1 style="font-family: Arial, Helvetica, sans-serif; font-weight: bold;" class="display-4">Enhance. Modify. Drive.</h1>
+                <p style="font-family: Arial, Helvetica, sans-serif;" class="lead">Your one-stop shop for all your car modification needs.</p>
+                <a href="#about" id="learnMore" class="btn custom-learn-button smooth-scroll">Learn More</a>
+            </div>
+        </section>
+    </div>
+<!-- First section -->
+<section id="about" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 pl-lg-5"> <!-- Added pl-lg-4 for left padding -->
+                <h2>About Car Mods</h2>
+                <p>
+                    Car Mods is your trusted source for high-quality car modification products and accessories. Whether you're looking to enhance your vehicle's performance or add some style with body kits and detailing, we've got you covered.
+                </p>
+            </div>
+            <div class="col-lg-6 slide-in" id="imageDiv">
+                <img src="bmww.jpg" alt="Car Modification" class="img-fluid rounded parallelogram">
+            </div>
+        </div>
+    </div>
+</section>
+    <section id="next-section" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <img src="bmww.jpg" alt="Car Modification" class="img-fluid rounded parallelogram">
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 text-right">
+                    <h2>About Car Mods</h2>
+                    <p>
+                        Car Mods is your trusted source for high-quality car modification products and accessories. Whether you're looking to enhance your vehicle's performance or add some style with body kits and detailing, we've got you covered.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="features" class="py-5" style="background-image: url(bmweyes.jpg); background-attachment: fixed;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 text-center">
+              <i class="fas fa-users fa-3x mb-2"></i>
+              <h3>Satisfied Customers</h3>
+              <p>We pride ourselves on providing excellent customer service and ensuring that our customers are satisfied with their purchases.</p>
+            </div>
+            <div class="col-md-4 text-center">
+              <i class="fas fa-map-marker-alt fa-3x mb-2"></i>
+              <h3>Locations</h3>
+              <p>We have multiple locations across the country, making it easy for you to find the products you need.</p>
+            </div>
+            <div class="col-md-4 text-center">
+              <i class="fas fa-dollar-sign fa-3x mb-2"></i>
+              <h3>Affordability</h3>
+              <p>We offer competitive pricing on all of our products, so you can get the modifications you want without breaking the bank.</p>
+            </div>
+          </div>
+        </div>
+    </section>
+    <section id="before-after" class="py-5">
+        <div class="container">
+            <h2 class="text-center">Before and After Modification</h2>
+            <div class="before-after-container">
+                <div class="image-container">
+                    <img src="befo.jpg" alt="Before Modification" id="before-image">
+                </div>
+                <input type="range" id="image-slider" min="0" max="100" value="0" step="1">
+                <div class="image-container">
+                    <img src="afta.jpg" alt="After Modification" id="after-image">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Contact Us</h5>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country</p>
+                    <p><i class="fas fa-phone"></i> Phone: +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> Email: info@example.com</p>
+                </div>
+                <div class="col-md-2">
+                    <h5>Connect With Us</h5>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="text-center">© 2023 Your Website Name</p>
+        </div>
+    </footer>
+    
+    
+
+</body>
+    <!-- Add Bootstrap JS and jQuery links here -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.querySelectorAll('a.smooth-scroll').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+    
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+    
+                window.scrollTo({
+                    top: target.offsetTop,
+                    behavior: 'smooth' // Smooth scrolling behavior
+                });
+            });
+        });
+    
+        // Function to handle animations when scrolling
+function handleScrollAnimation() {
+    const imageDiv = document.getElementById('imageDiv');
+    const rect = imageDiv.getBoundingClientRect();
+
+    // Check if the element is in the viewport
+    if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+        // Simulate a click on the "Learn More" button
+        document.getElementById('learnMore').click();
+        window.removeEventListener('scroll', handleScrollAnimation);
+    }
+}
+
+// Add a scroll event listener to trigger the animation
+window.addEventListener('scroll', handleScrollAnimation);
+
+// Initially check if the image is in the viewport when the page loads
+handleScrollAnimation();
+
+
+        </script>        
+    <script>
+        $(document).ready(function() {
+            // Move the image off-screen to the right
+            $("#imageDiv").css("transform", "translateX(100%)");
+        
+            // Add a click event handler to the "Learn More" button
+            $("#learnMore").click(function() {
+                // Slide in the image when the button is clicked
+                $("#imageDiv").css("transition", "transform 1s");
+                $("#imageDiv").css("transform", "translateX(0)");
+            });
+        });
+        </script>
+<script>
+document.getElementById('image-slider').addEventListener('input', function () {
+    const value = this.value;
+    const beforeImage = document.getElementById('before-image');
+    const afterImage = document.getElementById('after-image');
+
+    beforeImage.style.transform = `translateY(${100 - value}%)`;
+    afterImage.style.transform = `translateY(${value}%)`;
+});
+
+</script>
+</html>
+
+ <!----
+things to add:
+scroll bar
+animate bootstrap
+before after (aryaman)
+animate the bmw eyes section 
